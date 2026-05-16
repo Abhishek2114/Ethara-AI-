@@ -1,514 +1,608 @@
-# 🚀 ETHARA AI - The Absolute Beast Mode Project Management Engine
+# 🚀 ETHARA AI — THE ULTIMATE AI WORKSPACE PLATFORM
 
-> *Where chaos meets control, where productivity skyrockets, and where your team becomes an unstoppable force.*
-
----
-
-## 🔥 What is This Madness?
-
-**Ethara AI** isn't just another project management tool. It's a **full-stack battlestation** built to dominate task management, crushing productivity metrics like it's nobody's business. This is your team's new best friend—a sophisticated, AI-powered collaboration machine that turns scattered workflows into streamlined excellence.
-
-Think of it as:
-- 🎯 **Laser-focused task tracking** on steroids
-- 🤖 **AI-powered insights** that actually make sense
-- 👥 **Team collaboration** that doesn't suck
-- 📊 **Real-time analytics** that blow your mind
-- ⚡ **Performance that makes other tools look like they're sleeping**
+> **One platform. Multiple AI brains. Real-time collaboration. Production-ready architecture.**
+>
+> Welcome to **Ethara AI** — a next-generation AI workspace that combines the intelligence of multiple LLMs into a single powerful ecosystem designed for productivity, automation, collaboration, and scale.
 
 ---
 
-## 🎪 Feature Extravaganza
+# 🌐 LIVE DEMO
 
-### 🔐 **Authentication: Fort Knox Level Security**
-- JWT access tokens with bulletproof protection
-- httpOnly refresh cookies (hackers hate this one trick!)
-- bcrypt password hashing because we actually care about security
-- Session management that won't give you nightmares
-
-### 👑 **RBAC: Role-Based Access Control**
-- Admin & Member roles with granular permissions
-- Route-level authorization that keeps the bad guys out
-- Fine-grained control over who touches what
-
-### 📂 **Projects: Full CRUD Symphony**
-- Create, Read, Update, Delete projects with lightning speed
-- Team member management that's intuitive and powerful
-- Real-time progress tracking that keeps everyone in sync
-- Project templates to bootstrap faster than you can say "Agile"
-
-### 🎯 **Tasks: The Kanban Board from Heaven**
-- Drag-and-drop Kanban board that feels buttery smooth
-- Priority levels because not everything is equally urgent
-- Deadline tracking with visual heatmaps
-- Subtasks support for breaking down the complex
-
-### 📊 **Dashboard: Your Command Center**
-- **Live Stats** — See your metrics in real-time
-- **Interactive Charts** — Understand your data at a glance
-- **Activity Feed** — Stay in the loop, always
-- **AI Productivity Insights** — Machine learning that actually helps (not just hype)
-
-### 👨‍💼 **Team Management: The Roster That Rocks**
-- Crew roster with real-time availability
-- Task/project assignment counts at your fingertips
-- Performance metrics that matter
-- Burndown charts that tell the truth
-
-### 📈 **Analytics: Data Visualization on Overdrive**
-- Priority distribution breakdown
-- Productivity radar charting your team's mojo
-- Deadline heatmaps showing crunch time at a glance
-- Trend analysis that predicts problems before they happen
-
-### ✨ **UX: User Experience Designed by Perfectionists**
-- Command palette (⌘K) for power users
-- Toast notifications that don't annoy
-- Skeleton loaders for that premium feel
-- Framer Motion animations that pop
-- Dark mode because we respect your eyes
+🔥 **Experience Ethara AI Live Here:**  
+👉 https://astralhq.vercel.app/
 
 ---
 
-## 🛠️ The Tech Stack (The Good Stuff)
+# 🌟 WHY ETHARA AI?
 
-| Layer | Technologies | Status |
-|-------|-------------|--------|
-| **Frontend** | React 19, Vite, Tailwind CSS v4, React Router v7, Axios, Recharts, Framer Motion, @dnd-kit | 🔥 Blazing Fast |
-| **Backend** | Node.js, Express 5, Prisma 6 ORM, PostgreSQL | 💪 Bulletproof |
-| **Authentication** | JWT, bcryptjs, express-validator | 🔒 Fort Knox |
-| **Deployment** | Railway (Production), Docker Compose (Local) | 🚀 Ready to Launch |
-| **Real-time** | WebSocket support (Vercel-limited) | ⚡ Lightning |
+Most AI apps stop at being “just another chatbot.”
+
+**Ethara AI is different.**
+
+This platform is engineered to become an **AI Operating System** for teams, creators, developers, analysts, and businesses — combining:
+
+- 🧠 Multi-LLM Intelligence
+- ⚡ Real-Time Collaboration
+- 🔐 Enterprise-Level Authentication
+- 📂 Team Workspaces
+- 🤖 AI Automation
+- 🌐 Modern Full-Stack Architecture
+- 🚀 Scalable Cloud Deployment
 
 ---
 
-## 📦 Monorepo Architecture
+# 🔥 FEATURE EXTRAVAGANZA
 
+## 🧠 Multi-AI Integration
+Connect and interact with multiple LLM providers from one unified platform.
+
+### Supported / Planned Models
+- OpenAI GPT
+- Claude
+- Gemini
+- Perplexity
+- Custom AI APIs
+
+---
+
+## 💬 Smart AI Conversations
+- Persistent chat history
+- Context-aware responses
+- Markdown rendering
+- Streaming responses
+- Multi-session chat management
+
+---
+
+## 👥 Team Collaboration
+Work together in real time.
+
+### Includes:
+- Shared workspaces
+- Team chat
+- Project collaboration
+- AI-assisted brainstorming
+- Shared prompts & templates
+
+---
+
+## ⚡ Real-Time Sync
+Powered by WebSockets for lightning-fast updates.
+
+### Real-time Features:
+- Live messaging
+- Instant updates
+- Presence indicators
+- Typing indicators
+- Team activity sync
+
+---
+
+## 🔐 Secure Authentication
+Built with production-grade authentication systems.
+
+### Security Stack:
+- JWT Authentication
+- OAuth Support
+- Secure Sessions
+- Protected APIs
+- Rate Limiting
+- Environment Variable Protection
+
+---
+
+## 📊 AI Productivity Dashboard
+Monitor everything from one central command center.
+
+### Dashboard Includes:
+- Chat analytics
+- Usage tracking
+- Team insights
+- Workspace management
+- AI request monitoring
+
+---
+
+# 🏗️ SYSTEM ARCHITECTURE
+
+```text
+                    ┌─────────────────────┐
+                    │      Frontend       │
+                    │   React + Vite      │
+                    └─────────┬──────────┘
+                              │
+                              ▼
+                    ┌─────────────────────┐
+                    │    API Gateway      │
+                    │   Express Server    │
+                    └─────────┬──────────┘
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        ▼                     ▼                     ▼
+┌──────────────┐    ┌────────────────┐    ┌────────────────┐
+│ Authentication│    │ AI Integrations│    │ Real-Time Sync │
+│ JWT + OAuth   │    │ OpenAI/Claude │    │  Socket.IO     │
+└──────────────┘    └────────────────┘    └────────────────┘
+        │                     │                     │
+        └─────────────────────┼─────────────────────┘
+                              ▼
+                    ┌─────────────────────┐
+                    │      Database       │
+                    │ PostgreSQL/MongoDB  │
+                    └─────────────────────┘
 ```
-ethara-ai/
-├── 🎨 apps/
-│   ├── client/              # React 19 + Vite masterpiece
-│   │   ├── src/
-│   │   │   ├── pages/       # Route pages
-│   │   │   ├── components/  # Reusable UI components
-│   │   │   ├── lib/         # API calls & utilities
-│   │   │   └── contexts/    # AuthContext & global state
-│   │   └── vite.config.ts
-│   │
-│   └── server/              # Express API powerhouse
-│       ├── src/
-│       │   ├── routes/      # API endpoints
-│       │   ├── controllers/ # Business logic
-│       │   ├── services/    # Core logic
-│       │   ├── middleware/  # Auth & validation
-│       │   └── prisma/      # Database schema
-│       └── .env.example
-│
-├── docker-compose.yml       # Local PostgreSQL
-├── railway.json             # Railway config
-├── vercel.json              # Vercel config
-└── package.json             # npm workspaces magic
-```
 
 ---
 
-## ⚡ Quick Start: Get This Beast Running in 5 Minutes
+# 🛠️ TECH STACK
 
-### Prerequisites
-- **Node.js 20+** (older versions need not apply)
-- **Docker** (optional, for PostgreSQL—but recommended)
+## 🎨 Frontend
+- React.js
+- TypeScript
+- Vite
+- Tailwind CSS
+- Zustand / Context API
+- Axios
+- React Router
 
-### Step 1: Clone & Conquer
+---
+
+## ⚙️ Backend
+- Node.js
+- Express.js
+- TypeScript
+- Socket.IO
+- JWT Authentication
+- REST APIs
+
+---
+
+## 🗄️ Database
+Choose your preferred database setup:
+
+### Option 1 — PostgreSQL
+- NeonDB
+- Railway PostgreSQL
+- Supabase
+
+### Option 2 — MongoDB
+- MongoDB Atlas
+- Local MongoDB
+
+---
+
+## ☁️ Deployment
+- Railway
+- Vercel
+- Render
+- Docker
+- Netlify
+
+---
+
+# 📂 PROJECT STRUCTURE
+
 ```bash
-git clone https://github.com/Abhishek2114/Ethara-AI-.git ethara-ai
+ethara-ai/
+│
+├── client/                 # Frontend Application
+│   ├── src/
+│   │   ├── components/     # Reusable UI Components
+│   │   ├── pages/          # App Pages
+│   │   ├── hooks/          # Custom Hooks
+│   │   ├── services/       # API Calls
+│   │   ├── store/          # Global State
+│   │   └── utils/          # Utility Functions
+│
+├── server/                 # Backend Application
+│   ├── routes/             # API Routes
+│   ├── controllers/        # Business Logic
+│   ├── middleware/         # Middleware
+│   ├── models/             # Database Models
+│   ├── services/           # External Services
+│   └── sockets/            # Real-Time Events
+│
+├── shared/                 # Shared Types & Configs
+│
+├── docs/                   # Documentation
+│
+├── .env.example            # Environment Variables
+├── package.json
+└── README.md
+```
+
+---
+
+# ⚡ QUICK START
+
+## 📦 Clone the Repository
+
+```bash
+git clone https://github.com/your-username/ethara-ai.git
 cd ethara-ai
+```
+
+---
+
+## 📥 Install Dependencies
+
+```bash
 npm install
 ```
 
-### Step 2: Configure Environment
-```bash
-cp apps/client/.env.example apps/client/.env
-cp apps/server/.env.example apps/server/.env
-```
-
-### Step 3: Choose Your Database Path
-
-#### 🛤️ **Option A: SQLite (Recommended for Dev)**
-```bash
-npm run setup:local
-```
-This creates a local SQLite database, seeds demo data, and you're ready to roll.
-
-#### 🐘 **Option B: PostgreSQL (Recommended for Production)**
-```bash
-# Start PostgreSQL container
-npm run docker:up
-
-# Set up database
-npm run db:deploy
-npm run db:seed
-
-# Configure JWT secrets in apps/server/.env
-# JWT_ACCESS_SECRET=your-super-secret-key-32-chars-min
-# JWT_REFRESH_SECRET=your-another-secret-32-chars-min
-```
-
-### Step 4: Fire It Up
-```bash
-npm run dev
-```
-
-🎉 **Done!** Your setup is live:
-- **Frontend:** http://localhost:5173
-- **API:** http://localhost:3000/api
-- **Swagger Docs:** http://localhost:3000/api/docs
-
-### Demo Accounts (Use These to Explore)
-
-| Role | Email | Password | Superpowers |
-|------|-------|----------|-------------|
-| 👑 Admin | admin@ethara.app | Admin123! | Full system access |
-| 👤 Member | alex@ethara.app | Member123! | Task assignments & execution |
-
 ---
 
-## 🔧 Environment Variables: Configure Like a Pro
+# 🔑 ENVIRONMENT VARIABLES
 
-### Server Configuration (`apps/server/.env`)
+Create a `.env` file in the root directory.
 
 ```env
-# Database (choose one)
-DATABASE_URL=postgresql://user:password@localhost:5432/ethara
+# Server
+PORT=5000
+NODE_ENV=development
 
-# Authentication - Use strong, random 32+ character strings!
-JWT_ACCESS_SECRET=your-super-duper-secret-access-token-key-here
-JWT_REFRESH_SECRET=your-super-duper-secret-refresh-token-key-here
+# Database
+DATABASE_URL=your_database_url
 
-# Token Expiry
-JWT_ACCESS_EXPIRES_IN=15m      # Access token lifespan
-JWT_REFRESH_EXPIRES_IN=7d      # Refresh token lifespan
+# JWT
+JWT_SECRET=super_secret_key
 
-# Network & CORS
-CORS_ORIGIN=http://localhost:5173,https://yourdomain.com
-PORT=3000
+# OpenAI
+OPENAI_API_KEY=your_openai_key
 
-# Production Only
-COOKIE_SECURE=true             # HTTPS only in production
-NODE_ENV=production
-```
+# Claude
+CLAUDE_API_KEY=your_claude_key
 
-### Client Configuration (`apps/client/.env`)
-
-```env
-# Leave empty in dev to use Vite proxy
-# In production, set to your API endpoint
-VITE_API_URL=https://api.yourdomain.com
+# Gemini
+GEMINI_API_KEY=your_gemini_key
 ```
 
 ---
 
-## 🌐 API Reference: The Complete Arsenal
+# 🚀 RUN THE PROJECT
 
-**Base URL:** `/api` or your deployed URL
-
-### 🔐 Authentication Endpoints
-```
-POST   /auth/register           # Create new account
-POST   /auth/login              # Get access & refresh tokens
-POST   /auth/refresh            # Refresh access token
-POST   /auth/logout             # Destroy session
-GET    /auth/me                 # Get current user (requires Bearer token)
-```
-
-### 📂 Projects API
-```
-GET    /projects                # List all projects
-POST   /projects                # Create new project
-GET    /projects/:id            # Get project details
-PUT    /projects/:id            # Update project
-DELETE /projects/:id            # Delete project
-```
-
-### 🎯 Tasks API
-```
-GET    /tasks                   # Fetch all tasks
-POST   /tasks                   # Create task
-POST   /tasks/reorder           # Reorder tasks in Kanban
-GET    /tasks/:id               # Get task details
-PUT    /tasks/:id               # Update task (status, assignee, etc)
-DELETE /tasks/:id               # Delete task
-```
-
-### 📊 Dashboard & Analytics
-```
-GET    /dashboard/stats         # Fetch stats & metrics
-GET    /team                    # Get team roster & performance
-GET    /health                  # Health check (no auth needed)
-```
-
----
-
-## 🏗️ Architecture: How the Magic Works
-
-```
-┌──────────────────────────────────────────────────────────┐
-│  🎨 Frontend Layer                                       │
-│  ┌─────────────┐      Vite dev server with HMR         │
-│  │  React 19   │      Command Palette (⌘K)             │
-│  │  Vite       │      Smooth animations & transitions   │
-│  │  TailwindCSS│      Responsive design                │
-│  └──────┬──────┘                                        │
-└─────────┼────────────────────────────────────────────────┘
-          │
-          │ HTTPS + JWT Bearer Token
-          │
-┌─────────▼────────────────────────────────────────────────┐
-│  🔌 API Layer (Express 5)                               │
-│  ┌─────────────────────────────────────────┐            │
-│  │  Routes → Controllers → Services        │            │
-│  │  - Input Validation (express-validator) │            │
-│  │  - Error Handling (Custom middleware)   │            │
-│  │  - Rate limiting                        │            │
-│  │  - CORS protection                      │            │
-│  └──────────────────┬──────────────────────┘            │
-└─────────────────────┼────────────────────────────────────┘
-                      │
-         ┌────────────┴────────────┐
-         │                         │
-    ┌────▼────┐           ┌───────▼──────┐
-    │ Prisma  │           │ Cache Layer  │
-    │ ORM     │           │ (Optional)   │
-    └────┬────┘           └──────────────┘
-         │
-    ┌────▼──────────────┐
-    │ 🐘 PostgreSQL    │
-    │ - Production DB  │
-    │ - Migrations     │
-    │ - Indexing       │
-    └───────────────────┘
-```
-
-**Data Flow:**
-- **Frontend:** Pages → Components → API calls via `lib/api.ts`
-- **Backend:** Routes receive requests → Controllers validate & authorize → Services execute business logic → Prisma ORM queries database
-- **Auth:** JWT stored in memory (access) + httpOnly cookies (refresh)
-
----
-
-## 🚀 Deployment: Go Global
-
-### Railway Deployment (Recommended)
-
-1. **Create Railway Project** → Connect this GitHub repo
-2. **Add PostgreSQL Plugin** → Copy `DATABASE_URL` env var
-3. **Create Services:**
-   - API Service: `apps/server`, start command: `node src/index.js`
-   - Web Service: `apps/client`, build: `npm run build`
-4. **Set Environment Variables** on API service:
-   ```
-   DATABASE_URL=<from PostgreSQL plugin>
-   JWT_ACCESS_SECRET=<your-secret>
-   JWT_REFRESH_SECRET=<your-secret>
-   CORS_ORIGIN=https://your-railway-domain.app
-   COOKIE_SECURE=true
-   NODE_ENV=production
-   ```
-5. **Set Client Env:** `VITE_API_URL=https://your-api.railway.app`
-6. **Deploy** → Automatic migrations run on deploy!
-
-### Vercel Deployment (Full Stack)
-
-1. **Connect Repository** to Vercel
-2. **Vercel Build:**
-   - Builds Vite client
-   - Routes `/api/*` to Express serverless functions
-3. **Environment Variables:**
-   ```
-   DATABASE_URL=<Postgres URL>
-   JWT_ACCESS_SECRET=<secret>
-   JWT_REFRESH_SECRET=<secret>
-   CORS_ORIGIN=https://your-vercel-domain.vercel.app
-   COOKIE_SECURE=true
-   ```
-4. **Deploy** → Live!
-
-**Note:** Real-time sockets (Socket.IO) won't work on Vercel serverless. Use Railway or similar for real-time features.
-
-### Docker Compose (Local Development)
+## Development Mode
 
 ```bash
-# Start PostgreSQL
-docker-compose up -d
-
-# Run migrations & seed
-npm run db:migrate
-npm run db:seed
-
-# Start dev servers
 npm run dev
 ```
 
 ---
 
-## 📝 Available Scripts: Your Command Arsenal
+## Production Build
 
 ```bash
-npm run dev              # 🚀 Start dev mode (API + Client)
-npm run build            # 📦 Build for production
-npm run db:migrate       # 🗄️  Run pending migrations
-npm run db:seed          # 🌱 Seed with demo data
-npm run setup:local      # 🏠 One-command local setup with SQLite
-npm run docker:up        # 🐳 Start Docker Postgres
-npm run docker:down      # 🛑 Stop Docker Postgres
-npm run lint             # 🔍 Check code quality
-npm run test             # ✅ Run tests
+npm run build
 ```
 
 ---
 
-## 🎯 Project Structure Deep Dive
+# 🌐 DEPLOYMENT GUIDE
 
-```
-apps/client/
-├── src/
-│   ├── pages/           # Route pages (Dashboard, Projects, Tasks, etc)
-│   ├── components/      # Reusable UI components
-│   │   ├── ui/         # Base UI (buttons, inputs, cards)
-│   │   ├── forms/      # Complex forms
-│   │   └── layouts/    # Page layouts
-│   ├── contexts/        # AuthContext, ThemeContext
-│   ├── hooks/          # Custom React hooks
-│   ├── lib/
-│   │   ├── api.ts      # Axios instance & API calls
-│   │   ├── utils.ts    # Utility functions
-│   │   └── constants.ts
-│   ├── App.tsx         # Main app component
-│   └── main.tsx        # Entry point
-└── vite.config.ts
+# 🚂 Railway Deployment
 
-apps/server/
-├── src/
-│   ├── routes/         # API route definitions
-│   ├── controllers/     # Route handlers
-│   ├── services/        # Business logic
-│   ├── middleware/      # Auth, validation, error handling
-│   ├── models/         # TypeScript interfaces
-│   ├── prisma/
-│   │   └── schema.prisma  # Database schema
-│   ├── utils/          # Helper functions
-│   ├── index.ts        # Express setup
-│   └── config.ts       # Configuration
-├── migrations/         # Database migrations
-└── .env.example
+## 1️⃣ Create Railway Project
+- Login to Railway
+- Create New Project
+- Connect GitHub Repository
+
+---
+
+## 2️⃣ Add Environment Variables
+
+Go to:
+
+```text
+Project → Variables
 ```
 
----
-
-## 🔒 Security Features (Sleep Soundly)
-
-✅ **JWT-based stateless authentication**  
-✅ **bcrypt password hashing with salt rounds**  
-✅ **httpOnly cookies prevent XSS attacks**  
-✅ **CORS protection with configurable origins**  
-✅ **Input validation on all endpoints**  
-✅ **Rate limiting (recommended addition)**  
-✅ **SQL injection protection via Prisma ORM**  
-✅ **HTTPS enforcement in production**  
+Add all `.env` variables.
 
 ---
 
-## 🎨 UI/UX Magic (Why Users Love It)
+## 3️⃣ Deploy Backend
 
-- ⚡ **Command Palette** — Press ⌘K to access any feature instantly
-- 🎬 **Smooth Animations** — Framer Motion brings life to the interface
-- 🌈 **Tailwind CSS v4** — Utility-first styling at lightspeed
-- 📱 **Fully Responsive** — Works on mobile, tablet, desktop seamlessly
-- 🌙 **Dark Mode Support** — Because developers prefer the darkness
-- ♿ **Accessibility** — WCAG compliance (working towards it)
-- 🎯 **Drag-and-Drop** — @dnd-kit powers smooth Kanban interactions
+Railway automatically detects:
+- Node.js
+- Build Commands
+- Start Commands
 
 ---
 
-## 🐛 Troubleshooting: When Things Go Sideways
+## 4️⃣ Database Setup
 
-### "Database connection refused"
+### PostgreSQL
+```text
+Railway → Add Plugin → PostgreSQL
+```
+
+Copy the generated DATABASE_URL.
+
+---
+
+# ▲ Vercel Deployment
+
+## Deploy Frontend
+
 ```bash
-# Check if PostgreSQL is running
-docker-compose ps
-
-# If not running:
-npm run docker:up
+npm install -g vercel
+vercel
 ```
 
-### "JWT token expired"
+---
+
+## Configure Environment Variables
+
+Inside Vercel Dashboard:
+- Add API URL
+- Add public environment variables
+
+---
+
+## Connect Backend
+
+Update frontend API base URL:
+
+```env
+VITE_API_URL=https://your-backend-url.com
+```
+
+---
+
+# 🧠 AI PROVIDER INTEGRATION
+
+## OpenAI Example
+
+```ts
+import OpenAI from "openai";
+
+const client = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+```
+
+---
+
+## Claude Example
+
+```ts
+const anthropic = new Anthropic({
+  apiKey: process.env.CLAUDE_API_KEY,
+});
+```
+
+---
+
+# 📡 API REFERENCE
+
+# 🔑 Authentication APIs
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/auth/register` | Register User |
+| POST | `/api/auth/login` | Login User |
+| GET | `/api/auth/me` | Get Current User |
+
+---
+
+# 💬 Chat APIs
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/chats` | Get Chats |
+| POST | `/api/chats` | Create Chat |
+| POST | `/api/messages` | Send Message |
+
+---
+
+# 👥 Workspace APIs
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/workspaces` | Get Workspaces |
+| POST | `/api/workspaces` | Create Workspace |
+| PUT | `/api/workspaces/:id` | Update Workspace |
+
+---
+
+# 🔥 REAL-TIME EVENTS
+
+## Socket Events
+
+```text
+connect
+disconnect
+message:new
+workspace:update
+user:typing
+presence:update
+```
+
+---
+
+# 🔐 SECURITY FEATURES
+
+✅ JWT Authentication  
+✅ Password Hashing  
+✅ Environment Variable Protection  
+✅ API Validation  
+✅ Rate Limiting  
+✅ CORS Protection  
+✅ Secure Headers  
+✅ Input Sanitization  
+
+---
+
+# 🧪 TESTING
+
+## Run Tests
+
 ```bash
-# Refresh tokens automatically, but if stuck:
-1. Clear browser cookies
-2. Log out and log back in
-3. Check JWT_REFRESH_SECRET in .env
+npm run test
 ```
 
-### "CORS errors in browser console"
+---
+
+## Run Linting
+
 ```bash
-# Update CORS_ORIGIN in apps/server/.env
-CORS_ORIGIN=http://localhost:5173,https://yourdomain.com
+npm run lint
 ```
 
-### "Port 3000/5173 already in use"
+---
+
+# 🐳 DOCKER SUPPORT
+
+## Build Docker Image
+
 ```bash
-# Kill existing process:
-lsof -ti:3000 | xargs kill -9  # macOS/Linux
-netstat -ano | findstr :3000   # Windows
+docker build -t ethara-ai .
 ```
 
 ---
 
-## 📚 Learning Resources
+## Run Container
 
-- **React 19:** https://react.dev
-- **Vite:** https://vitejs.dev
-- **Express:** https://expressjs.com
-- **Prisma:** https://www.prisma.io/docs
-- **Tailwind CSS:** https://tailwindcss.com/docs
-- **Railway Docs:** https://docs.railway.app
+```bash
+docker run -p 5000:5000 ethara-ai
+```
 
 ---
 
-## 🤝 Contributing
+# 🐛 TROUBLESHOOTING
 
-We welcome contributions! Here's how:
+# ❌ Environment Variables Not Working
 
-1. **Fork the repo**
-2. **Create a feature branch:** `git checkout -b feature/amazing-thing`
-3. **Commit changes:** `git commit -m "Add amazing thing"`
-4. **Push branch:** `git push origin feature/amazing-thing`
-5. **Open a Pull Request** with description
-
-**Code Standards:**
-- Follow ESLint rules
-- Use TypeScript strict mode
-- Write tests for new features
-- Keep commits atomic and descriptive
+### Fix:
+- Restart server
+- Check `.env` spelling
+- Ensure variables are loaded correctly
 
 ---
 
-## 📄 License
+# ❌ Database Connection Failed
 
-ISC — Do whatever you want with this project (but credit is appreciated!)
-
----
-
-## 🎉 Final Thoughts
-
-**Ethara AI** is built for teams that refuse to compromise on quality, speed, and user experience. It's not just a tool—it's a philosophy. A commitment to excellence. A beast mode project management system that laughs in the face of chaos.
-
-Ready to dominate your workflow? Let's go! 🚀
+### Fix:
+- Verify DATABASE_URL
+- Check DB permissions
+- Ensure database is active
 
 ---
 
-<div align="center">
+# ❌ CORS Errors
 
-**Built with ❤️ by [Abhishek2114](https://github.com/Abhishek2114)**
+### Fix:
+Update backend CORS config:
 
-⭐ If you find this useful, please star the repo!
+```ts
+origin: ["http://localhost:5173"]
+```
 
-</div>
+---
+
+# ❌ Build Failed on Railway
+
+### Fix:
+Ensure:
+
+```json
+"build": "npm run build"
+```
+
+exists in `package.json`.
+
+---
+
+# 📈 FUTURE ROADMAP
+
+## 🚀 Upcoming Features
+
+- AI Agents
+- Voice AI
+- AI File Analysis
+- Team Roles & Permissions
+- AI Workflow Automation
+- RAG Pipeline
+- AI Search Engine
+- Plugin Marketplace
+- Mobile App
+- AI Coding Assistant
+
+---
+
+# 🤝 CONTRIBUTING
+
+We welcome contributors from around the world.
+
+## Steps to Contribute
+
+1. Fork the Repository
+2. Create a Feature Branch
+3. Commit Changes
+4. Push to GitHub
+5. Open Pull Request
+
+---
+
+# 💡 LEARNING RESOURCES
+
+## Recommended Docs
+- React Documentation
+- Node.js Documentation
+- TypeScript Handbook
+- Socket.IO Docs
+- Railway Docs
+- Vercel Docs
+
+---
+
+# 🌍 OPEN SOURCE VISION
+
+Ethara AI is more than a project.
+
+It’s a movement toward:
+- Smarter collaboration
+- AI-powered productivity
+- Unified intelligence systems
+- Accessible AI infrastructure
+
+---
+
+# 👨‍💻 BUILT FOR BUILDERS
+
+Whether you're:
+- a developer,
+- startup founder,
+- AI engineer,
+- student,
+- researcher,
+- or innovator...
+
+**Ethara AI is built to help you create faster, smarter, and bigger.**
+
+---
+
+# ⭐ SUPPORT THE PROJECT
+
+If this project helped you:
+
+🌟 Star the repository  
+🍴 Fork the project  
+🧠 Contribute ideas  
+🚀 Share with developers  
+
+---
+
+# 📜 LICENSE
+
+MIT License © 2026 Ethara AI
+
+---
+
+# 🚀 FINAL MESSAGE
+
+> **This isn’t just another AI app.**
+>
+> Ethara AI is the foundation for the next generation of intelligent collaboration systems.
+>
+> Build boldly. Scale fearlessly. Ship faster. 💥
