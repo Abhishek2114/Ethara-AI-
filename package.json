@@ -1,0 +1,31 @@
+{
+  "name": "astralhq",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mission Control for Modern Teams",
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w @astralhq/server\" \"npm run dev -w @astralhq/client\"",
+    "dev:server": "npm run dev -w @astralhq/server",
+    "dev:client": "npm run dev -w @astralhq/client",
+    "build": "npm run build -w @astralhq/client",
+    "start": "npm run start -w @astralhq/server",
+    "db:generate": "npm run db:generate -w @astralhq/server",
+    "db:migrate": "npm run db:migrate -w @astralhq/server",
+    "db:deploy": "npm run db:deploy -w @astralhq/server",
+    "db:seed": "npm run db:seed -w @astralhq/server",
+    "db:studio": "npm run db:studio -w @astralhq/server",
+    "setup:local": "npm run setup:local -w @astralhq/server",
+    "demo": "npm run setup:local && concurrently \"npm run dev:local -w @astralhq/server\" \"npm run dev -w @astralhq/client\""
+  },
+  "workspaces": [
+    "apps/server",
+    "apps/client"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "ISC"
+}

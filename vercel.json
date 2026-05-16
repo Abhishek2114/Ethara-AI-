@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "framework": "vite",
+  "installCommand": "npm install && npm install -w @astralhq/client && npm run db:generate -w @astralhq/server",
+  "buildCommand": "npm run build -w @astralhq/client",
+  "outputDirectory": "apps/client/dist",
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
