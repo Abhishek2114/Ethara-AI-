@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #070B14;
+  --color-surface: #111827;
+  --color-card: #161D2E;
+  --color-border: rgba(255,255,255,0.06);
+  --color-cyan: #00E5FF;
+  --color-purple: #7C3AED;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+  --color-text-primary: #E5E7EB;
+  --color-text-secondary: #94A3B8;
+  
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+#root { min-height: 100vh; position: relative; }
+
+/* Radial Glowing Backdrops */
+.glow-backdrop-cyan {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(0,229,255,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-backdrop-purple {
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(124,58,237,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: rgba(22, 29, 46, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card {
+  background: rgba(22, 29, 46, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 229, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+}
+
+/* Neon Text & Buttons */
+.text-neon-cyan {
+  color: var(--color-cyan);
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.btn-neon {
+  background: transparent;
+  color: var(--color-cyan);
+  border: 1px solid var(--color-cyan);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.2), inset 0 0 10px rgba(0, 229, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-neon:hover {
+  background: rgba(0, 229, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), inset 0 0 20px rgba(0, 229, 255, 0.2);
+}
+
+.btn-primary-neon {
+  background: var(--color-cyan);
+  color: var(--color-bg);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.btn-primary-neon:hover {
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+.auth-watermark {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.auth-watermark span {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 18vw, 12rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.02);
+  white-space: nowrap;
+  user-select: none;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 229, 255, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 255, 0.4);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

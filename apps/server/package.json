@@ -1,0 +1,50 @@
+{
+  "name": "@astralhq/server",
+  "version": "1.0.0",
+  "description": "AstralHQ API — Express, Prisma, JWT, RBAC",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node scripts/ensure-db.js && cp .env.sqlite .env && prisma generate --schema=prisma/schema.sqlite.prisma && nodemon",
+    "start": "node src/index.js",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:seed": "node prisma/seed.js",
+    "db:studio": "prisma studio",
+    "db:reset": "prisma migrate reset --force",
+    "setup:local": "cp .env.sqlite .env && mkdir -p data && prisma generate --schema=prisma/schema.sqlite.prisma && rm -f data/dev.db prisma/dev.db prisma/prisma/dev.db && prisma db push --schema=prisma/schema.sqlite.prisma && chmod 664 data/dev.db 2>/dev/null; chmod 775 data 2>/dev/null; node prisma/seed.js",
+    "dev:local": "npm run dev"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "keywords": [
+    "astralhq",
+    "express",
+    "prisma",
+    "jwt",
+    "rbac"
+  ],
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "6.19.3",
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.3.2",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "socket.io": "^4.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "prisma": "6.19.3"
+  }
+}
