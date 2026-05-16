@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { projectsApi, workItemsApi, authApi } from "../lib/api";
-import { Card } from "../components/ui/Card";
+import { projectsApi, workItemsApi } from "../lib/api";
 import { Badge } from "../components/ui/Badge";
-import { Button } from "../components/ui/Button";
 import { PageSkeleton } from "../components/ui/Skeleton";
 import { KanbanBoard } from "../components/tasks/KanbanBoard";
 import { useToast } from "../hooks/useToast";
@@ -19,12 +17,16 @@ export default function ProjectDetail() {
   const { toast } = useToast();
 
   const load = () => {
-    projectsApi.get(id).then((res) => {
-      setProject(res.data.data.project);
-      return workItemsApi.listByProject(id);
-    }).then((res) => {
-      setTasks(res.data.items);
-    }).finally(() => setLoading(false));
+    projectsApi
+      .get(id)
+      .then((res) => {
+        setProject(res.data.data.project);
+        return workItemsApi.listByProject(id);
+      })
+      .then((res) => {
+        setTasks(res.data.items);
+      })
+      .finally(() => setLoading(false));
   };
 
   useEffect(() => {
@@ -44,41 +46,56 @@ export default function ProjectDetail() {
     }
   };
 
+  const inputClass =
+    "w-full rounded-lg border border-border bg-surface px-3.5 py-2.5 text-sm text-text outline-none transition-colors placeholder:text-muted hover:border-border-hover focus:border-accent focus:ring-1 focus:ring-accent/30";
+
   if (loading) return <PageSkeleton />;
-  if (!project) return <div className="p-8 text-center text-muted">Project not found</div>;
+  if (!project)
+    return <div className="py-16 text-center text-sm text-muted">Project not found</div>;
 
   return (
     <div className="space-y-6">
+      {/* Header */}
       <div className="flex items-center justify-between">
         <div>
           <Badge>{project.lifecycle}</Badge>
-          <h1 className="mt-2 font-display text-3xl font-bold">{project.title}</h1>
-          <p className="text-muted">{project.category}</p>
+          <h1 className="mt-2 text-2xl font-semibold tracking-tight text-text">{project.title}</h1>
+          <p className="mt-0.5 text-sm text-muted">{project.category}</p>
         </div>
-        <Button onClick={() => setShowTaskForm(!showTaskForm)}>
-          <Plus size={18} /> New Task
-        </Button>
+        <button
+          onClick={() => setShowTaskForm(!showTaskForm)}
+          className="flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+        >
+          <Plus size={15} /> New Task
+        </button>
       </div>
 
+      {/* New task form */}
       {showTaskForm && (
-        <Card>
-          <form onSubmit={createTask} className="flex gap-4">
+        <div className="rounded-xl border border-border bg-card p-5">
+          <form onSubmit={createTask} className="flex gap-3">
             <input
               value={taskTitle}
               onChange={(e) => setTaskTitle(e.target.value)}
               placeholder="Task title"
               required
-              className="flex-1 rounded-lg border border-cyan/10 bg-surface px-4 py-2"
+              className={inputClass + " flex-1"}
             />
-            <Button type="submit">Add</Button>
+            <button
+              type="submit"
+              className="rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+            >
+              Add
+            </button>
           </form>
-        </Card>
+        </div>
       )}
 
-      <Card>
-        <h2 className="mb-4 font-display font-semibold">Mission Board</h2>
+      {/* Kanban Board */}
+      <div className="rounded-xl border border-border bg-card p-5">
+        <h2 className="mb-4 text-sm font-semibold text-text">Mission Board</h2>
         <KanbanBoard tasks={tasks} onUpdate={load} />
-      </Card>
+      </div>
     </div>
   );
 }

@@ -5,7 +5,7 @@ export function RoleBadge({ role, className }) {
   return (
     <span
       className={cn(
-        "inline-block rounded border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider",
+        "inline-block rounded-md border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider",
         ROLE_BADGE_CLASS[role] || ROLE_BADGE_CLASS.TASKER,
         className
       )}

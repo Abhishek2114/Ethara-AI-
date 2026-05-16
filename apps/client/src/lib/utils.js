@@ -21,22 +21,22 @@ export function formatRelative(date) {
 }
 
 export const STATUS_COLORS = {
-  PENDING: "bg-slate-500/20 text-slate-300",
-  IN_PROGRESS: "bg-cyan/20 text-cyan",
-  COMPLETED: "bg-success/20 text-success",
-  BLOCKED: "bg-danger/20 text-danger",
+  PENDING: "bg-elevated text-muted",
+  IN_PROGRESS: "bg-accent/10 text-accent",
+  COMPLETED: "bg-success/10 text-success",
+  BLOCKED: "bg-danger/10 text-danger",
 };
 
 export const PRIORITY_COLORS = {
   LOW: "text-muted",
-  MEDIUM: "text-cyan",
+  MEDIUM: "text-accent",
   HIGH: "text-warning",
   URGENT: "text-danger",
 };
 
 export const KANBAN_COLUMNS = [
-  { id: "PENDING", title: "Pending", color: "#94A3B8" },
-  { id: "IN_PROGRESS", title: "In Progress", color: "#00E5FF" },
-  { id: "COMPLETED", title: "Completed", color: "#10B981" },
-  { id: "BLOCKED", title: "Blocked", color: "#EF4444" },
+  { id: "PENDING", title: "Pending", color: "#707070" },
+  { id: "IN_PROGRESS", title: "In Progress", color: "#0091FF" },
+  { id: "COMPLETED", title: "Completed", color: "#30A46C" },
+  { id: "BLOCKED", title: "Blocked", color: "#E5484D" },
 ];

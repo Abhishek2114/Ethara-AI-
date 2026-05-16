@@ -41,19 +41,19 @@ export function CommandPalette({ open, onClose }) {
             onClick={onClose}
           />
           <motion.div
-            className="fixed left-1/2 top-[20%] z-50 w-full max-w-lg -translate-x-1/2 glass rounded-xl p-2 glow-cyan"
+            className="fixed left-1/2 top-[20%] z-50 w-full max-w-lg -translate-x-1/2 rounded-xl border border-border bg-card p-1.5 shadow-2xl"
             initial={{ opacity: 0, scale: 0.95, y: -10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95 }}
           >
-            <div className="flex items-center gap-2 border-b border-cyan/10 px-3 py-2">
-              <Search size={18} className="text-cyan" />
+            <div className="flex items-center gap-2 border-b border-border px-3 py-2.5">
+              <Search size={16} className="text-muted" />
               <input
                 autoFocus
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
-                placeholder="Type a command…"
-                className="flex-1 bg-transparent text-text outline-none"
+                placeholder="Type a command..."
+                className="flex-1 bg-transparent text-sm text-text outline-none placeholder:text-muted"
               />
             </div>
             <ul className="max-h-64 overflow-auto py-1">
@@ -61,13 +61,16 @@ export function CommandPalette({ open, onClose }) {
                 <li key={item.to}>
                   <button
                     onClick={() => go(item.to)}
-                    className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted hover:bg-cyan/10 hover:text-cyan"
+                    className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm text-text-secondary hover:bg-elevated hover:text-text"
                   >
                     <item.icon size={16} />
                     {item.label}
                   </button>
                 </li>
               ))}
+              {filtered.length === 0 && (
+                <li className="px-3 py-6 text-center text-sm text-muted">No results found</li>
+              )}
             </ul>
           </motion.div>
         </>

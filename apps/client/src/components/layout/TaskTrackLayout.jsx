@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { BookOpen, ChevronDown, LogOut } from "lucide-react";
+import { BookOpen, ChevronDown, ChevronLeft, ChevronRight, LogOut, Search } from "lucide-react";
 import { useAuth } from "../../lib/auth";
 import { brand } from "../../config/brand";
 import { getNavForRole } from "../../config/navigation";
@@ -12,6 +12,8 @@ export function TaskTrackLayout() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const nav = getNavForRole(user?.role);
+  const [collapsed, setCollapsed] = useState(false);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
 
   const initials = user?.name
     ?.split(" ")
@@ -27,75 +29,119 @@ export function TaskTrackLayout() {
 
   return (
     <div className="flex min-h-screen bg-bg">
-      <aside className="fixed left-0 top-0 z-40 flex h-screen w-56 flex-col border-r border-border bg-surface">
-        <div className="flex items-center gap-2 border-b border-border px-4 py-4">
-          <div className="flex h-8 w-8 items-center justify-center rounded bg-teal text-sm font-bold text-bg">
+      {/* ── Sidebar ── */}
+      <aside
+        className={cn(
+          "fixed left-0 top-0 z-40 flex h-screen flex-col border-r border-border bg-surface transition-all duration-200",
+          collapsed ? "w-16" : "w-60"
+        )}
+      >
+        {/* Logo */}
+        <div className="flex h-14 items-center gap-2.5 border-b border-border px-4">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent text-sm font-bold text-white">
             {brand.shortName}
           </div>
-          <span className="font-semibold text-text">{brand.name}</span>
+          {!collapsed && (
+            <span className="text-sm font-semibold tracking-tight text-text">{brand.name}</span>
+          )}
         </div>
 
-        <div className="border-b border-border p-4">
-          <div className="flex items-center gap-3">
-            <img
-              src={user?.avatar}
-              alt=""
-              className="h-10 w-10 rounded-full bg-card object-cover"
-            />
-            <div className="min-w-0 flex-1">
-              <p className="truncate text-sm font-medium">{user?.name}</p>
-              <RoleBadge role={user?.role} className="mt-1" />
+        {/* User info */}
+        {!collapsed && (
+          <div className="border-b border-border px-4 py-3">
+            <div className="flex items-center gap-2.5">
+              <img
+                src={user?.avatar}
+                alt=""
+                className="h-8 w-8 rounded-full bg-elevated object-cover"
+              />
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-sm font-medium text-text">{user?.name}</p>
+                <RoleBadge role={user?.role} className="mt-0.5" />
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
-        <nav className="flex-1 space-y-0.5 overflow-y-auto p-2">
+        {/* Navigation */}
+        <nav className="flex-1 space-y-0.5 overflow-y-auto px-2 py-3">
           {nav.map(({ to, icon: Icon, label }) => (
             <NavLink
               key={to}
               to={to}
               className={({ isActive }) =>
                 cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-colors",
+                  "flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                   isActive
-                    ? "border-l-2 border-teal bg-teal/10 text-teal"
-                    : "text-muted hover:bg-card hover:text-text"
+                    ? "bg-accent/10 text-accent"
+                    : "text-text-secondary hover:bg-elevated hover:text-text"
                 )
               }
+              title={collapsed ? label : undefined}
             >
-              <Icon size={18} />
-              {label}
+              <Icon size={18} className="shrink-0" />
+              {!collapsed && label}
             </NavLink>
           ))}
         </nav>
 
-        <button
-          onClick={handleLogout}
-          className="flex items-center gap-2 border-t border-border px-4 py-3 text-sm text-muted hover:text-danger"
-        >
-          <LogOut size={16} /> Sign Out
-        </button>
+        {/* Collapse toggle + sign out */}
+        <div className="border-t border-border p-2">
+          <button
+            onClick={() => setCollapsed(!collapsed)}
+            className="flex w-full items-center justify-center gap-2 rounded-lg py-2 text-sm text-muted transition-colors hover:bg-elevated hover:text-text"
+            aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+          >
+            {collapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
+            {!collapsed && <span>Collapse</span>}
+          </button>
+          <button
+            onClick={handleLogout}
+            className="mt-1 flex w-full items-center justify-center gap-2 rounded-lg py-2 text-sm text-muted transition-colors hover:bg-danger/10 hover:text-danger"
+          >
+            <LogOut size={16} />
+            {!collapsed && <span>Sign Out</span>}
+          </button>
+        </div>
       </aside>
 
-      <div className="ml-56 flex min-h-screen flex-1 flex-col">
-        <header className="sticky top-0 z-30 flex h-14 items-center justify-end gap-4 border-b border-border bg-bg/90 px-6 backdrop-blur">
-          <ActionInbox />
-          <a
-            href="#"
-            className="flex items-center gap-1.5 text-sm text-muted hover:text-teal"
-            onClick={(e) => e.preventDefault()}
-          >
-            <BookOpen size={16} /> Wiki
-          </a>
-          <button className="flex items-center gap-2 rounded-lg px-2 py-1 hover:bg-card">
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-teal/20 text-xs font-semibold text-teal">
-              {initials}
-            </span>
-            <span className="text-sm">{user?.name?.split(" ")[0]}</span>
-            <ChevronDown size={14} className="text-muted" />
-          </button>
+      {/* ── Main content area ── */}
+      <div
+        className={cn(
+          "flex min-h-screen flex-1 flex-col transition-all duration-200",
+          collapsed ? "ml-16" : "ml-60"
+        )}
+      >
+        {/* Header */}
+        <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-border bg-bg/80 px-6 backdrop-blur-md">
+          <div className="flex items-center gap-3">
+            {/* Breadcrumb area - empty for now, provides left spacing */}
+          </div>
+          <div className="flex items-center gap-2">
+            <ActionInbox />
+            <a
+              href="#"
+              className="flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-sm text-muted transition-colors hover:bg-elevated hover:text-text"
+              onClick={(e) => e.preventDefault()}
+            >
+              <BookOpen size={15} /> Wiki
+            </a>
+            <div className="relative">
+              <button
+                onClick={() => setUserMenuOpen(!userMenuOpen)}
+                className="flex items-center gap-2 rounded-lg px-2 py-1.5 transition-colors hover:bg-elevated"
+              >
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-accent/15 text-xs font-semibold text-accent">
+                  {initials}
+                </span>
+                <span className="text-sm text-text-secondary">{user?.name?.split(" ")[0]}</span>
+                <ChevronDown size={14} className="text-muted" />
+              </button>
+            </div>
+          </div>
         </header>
 
+        {/* Page content */}
         <main className="flex-1 p-6">
           <Outlet />
         </main>

@@ -10,22 +10,25 @@ export function Button({
 }) {
   const variants = {
     primary:
-      "bg-cyan text-bg/90 font-bold hover:shadow-[0_0_30px_rgba(0,229,255,0.6)] hover:-translate-y-0.5 disabled:opacity-50 disabled:shadow-none",
+      "bg-accent text-white font-medium hover:bg-accent-hover active:scale-[0.98] disabled:opacity-50",
     secondary:
-      "glass text-text/90 hover:border-cyan/50 glow-cyan-hover",
-    ghost: "text-text/70 hover:text-cyan hover:bg-cyan/15",
-    danger: "bg-danger/20 text-danger/90 hover:bg-danger/30",
+      "bg-elevated text-text border border-border font-medium hover:bg-card hover:border-border-hover",
+    ghost:
+      "text-text-secondary hover:text-text hover:bg-elevated",
+    danger:
+      "bg-danger/10 text-danger border border-danger/20 hover:bg-danger/20",
   };
+
   const sizes = {
-    sm: "px-3 py-1.5 text-sm",
-    md: "px-4 py-2 text-sm",
-    lg: "px-6 py-3",
+    sm: "h-8 px-3 text-xs gap-1.5 rounded-md",
+    md: "h-9 px-4 text-sm gap-2 rounded-lg",
+    lg: "h-11 px-5 text-sm gap-2 rounded-lg",
   };
 
   return (
     <button
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200",
+        "inline-flex items-center justify-center font-medium transition-all duration-150",
         variants[variant],
         sizes[size],
         className

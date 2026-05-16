@@ -15,9 +15,14 @@ export function ToastProvider({ children }) {
 
   const icons = { success: CheckCircle, error: AlertCircle, info: Info };
   const colors = {
-    success: "border-success/30 text-success",
-    error: "border-danger/30 text-danger",
-    info: "border-cyan/30 text-cyan",
+    success: "border-success/20 bg-success/5",
+    error: "border-danger/20 bg-danger/5",
+    info: "border-accent/20 bg-accent/5",
+  };
+  const iconColors = {
+    success: "text-success",
+    error: "text-danger",
+    info: "text-accent",
   };
 
   return (
@@ -33,12 +38,15 @@ export function ToastProvider({ children }) {
                 initial={{ opacity: 0, x: 40 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 40 }}
-                className={`glass flex items-center gap-3 rounded-lg border px-4 py-3 ${colors[t.type]}`}
+                className={`flex items-center gap-3 rounded-lg border bg-card px-4 py-3 shadow-lg shadow-black/20 ${colors[t.type]}`}
               >
-                <Icon size={18} />
+                <Icon size={16} className={iconColors[t.type]} />
                 <span className="text-sm text-text">{t.message}</span>
-                <button onClick={() => setToasts((x) => x.filter((i) => i.id !== t.id))}>
-                  <X size={14} className="text-muted" />
+                <button
+                  onClick={() => setToasts((x) => x.filter((i) => i.id !== t.id))}
+                  className="ml-2 rounded p-0.5 text-muted transition-colors hover:bg-elevated hover:text-text"
+                >
+                  <X size={14} />
                 </button>
               </motion.div>
             );

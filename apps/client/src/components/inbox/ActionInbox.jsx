@@ -50,11 +50,11 @@ export function ActionInbox() {
         onClick={() => setOpen(!open)}
         className={cn(
           "relative rounded-lg p-2 transition-colors",
-          open ? "bg-teal/10 text-teal" : "text-muted hover:bg-card hover:text-text"
+          open ? "bg-elevated text-text" : "text-muted hover:bg-elevated hover:text-text"
         )}
         aria-label="Action inbox"
       >
-        <Bell size={20} />
+        <Bell size={18} />
         {count > 0 && (
           <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-danger px-1 text-[10px] font-bold text-white">
             {count > 9 ? "9+" : count}
@@ -63,39 +63,39 @@ export function ActionInbox() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full z-50 mt-2 w-96 max-h-[70vh] overflow-hidden rounded-xl border border-border bg-card shadow-2xl">
+        <div className="absolute right-0 top-full z-50 mt-2 w-96 max-h-[70vh] overflow-hidden rounded-xl border border-border bg-card shadow-2xl shadow-black/30">
           <div className="flex items-center justify-between border-b border-border px-4 py-3">
             <div className="flex items-center gap-2">
-              <Inbox size={16} className="text-teal" />
-              <span className="font-semibold">Action Inbox</span>
+              <Inbox size={15} className="text-accent" />
+              <span className="text-sm font-semibold text-text">Action Inbox</span>
             </div>
-            <span className="text-xs text-muted">{count} pending</span>
+            <span className="rounded-md bg-elevated px-2 py-0.5 text-xs text-muted">{count} pending</span>
           </div>
 
           <div className="max-h-[60vh] overflow-y-auto p-2">
             {isManager && (inbox?.pendingLeaves?.length ?? 0) > 0 && (
               <section className="mb-3">
-                <p className="mb-1 flex items-center gap-1 px-2 text-[10px] font-bold uppercase text-muted">
-                  <CalendarOff size={12} /> Leave approvals
+                <p className="mb-1.5 flex items-center gap-1 px-2 text-[10px] font-semibold uppercase tracking-wider text-muted">
+                  <CalendarOff size={11} /> Leave approvals
                 </p>
                 {inbox.pendingLeaves.map((l) => (
                   <div key={l.id} className="mb-1 rounded-lg border border-border bg-surface p-3">
-                    <p className="text-sm font-medium">{l.user?.name}</p>
+                    <p className="text-sm font-medium text-text">{l.user?.name}</p>
                     <p className="text-xs text-muted">
-                      {new Date(l.startDate).toLocaleDateString()} – {new Date(l.endDate).toLocaleDateString()}
+                      {new Date(l.startDate).toLocaleDateString()} - {new Date(l.endDate).toLocaleDateString()}
                     </p>
                     <div className="mt-2 flex gap-2">
                       <button
                         type="button"
                         onClick={() => handleLeave(l.id, "APPROVED")}
-                        className="flex flex-1 items-center justify-center gap-1 rounded bg-success/20 py-1 text-xs text-success hover:bg-success/30"
+                        className="flex flex-1 items-center justify-center gap-1 rounded-md bg-success/10 py-1.5 text-xs font-medium text-success transition-colors hover:bg-success/20"
                       >
                         <Check size={12} /> Approve
                       </button>
                       <button
                         type="button"
                         onClick={() => handleLeave(l.id, "REJECTED")}
-                        className="flex flex-1 items-center justify-center gap-1 rounded bg-danger/20 py-1 text-xs text-danger hover:bg-danger/30"
+                        className="flex flex-1 items-center justify-center gap-1 rounded-md bg-danger/10 py-1.5 text-xs font-medium text-danger transition-colors hover:bg-danger/20"
                       >
                         <X size={12} /> Reject
                       </button>
@@ -107,18 +107,18 @@ export function ActionInbox() {
 
             {isManager && (inbox?.pendingReviews?.length ?? 0) > 0 && (
               <section className="mb-3">
-                <p className="mb-1 flex items-center gap-1 px-2 text-[10px] font-bold uppercase text-muted">
-                  <ClipboardCheck size={12} /> Task reviews
+                <p className="mb-1.5 flex items-center gap-1 px-2 text-[10px] font-semibold uppercase tracking-wider text-muted">
+                  <ClipboardCheck size={11} /> Task reviews
                 </p>
                 {inbox.pendingReviews.slice(0, 5).map((item) => (
                   <button
                     key={item.id}
                     type="button"
                     onClick={() => { setOpen(false); navigate("/task-review"); }}
-                    className="mb-1 w-full rounded-lg border border-border bg-surface p-3 text-left hover:border-teal/40"
+                    className="mb-1 w-full rounded-lg border border-border bg-surface p-3 text-left transition-colors hover:border-border-hover hover:bg-elevated"
                   >
-                    <p className="truncate text-sm font-medium">{item.title}</p>
-                    <p className="text-xs text-muted">{item.user?.name} · {item.project?.code}</p>
+                    <p className="truncate text-sm font-medium text-text">{item.title}</p>
+                    <p className="text-xs text-muted">{item.user?.name} - {item.project?.code}</p>
                   </button>
                 ))}
               </section>
@@ -126,33 +126,33 @@ export function ActionInbox() {
 
             {(inbox?.recentFlags?.length ?? 0) > 0 && (
               <section className="mb-3">
-                <p className="mb-1 flex items-center gap-1 px-2 text-[10px] font-bold uppercase text-muted">
-                  <Flag size={12} /> Project flags
+                <p className="mb-1.5 flex items-center gap-1 px-2 text-[10px] font-semibold uppercase tracking-wider text-muted">
+                  <Flag size={11} /> Project flags
                 </p>
                 {inbox.recentFlags.map((f) => (
                   <button
                     key={f.id}
                     type="button"
                     onClick={() => { setOpen(false); navigate("/projects"); }}
-                    className="mb-1 w-full rounded-lg border border-border bg-surface p-3 text-left hover:border-teal/40"
+                    className="mb-1 w-full rounded-lg border border-border bg-surface p-3 text-left transition-colors hover:border-border-hover hover:bg-elevated"
                   >
-                    <p className="text-sm font-medium">{f.project?.code}</p>
-                    <p className="text-xs text-muted">{f.user?.name}{f.note ? ` — ${f.note}` : ""}</p>
+                    <p className="text-sm font-medium text-text">{f.project?.code}</p>
+                    <p className="text-xs text-muted">{f.user?.name}{f.note ? ` - ${f.note}` : ""}</p>
                   </button>
                 ))}
               </section>
             )}
 
             {count === 0 && (
-              <p className="py-8 text-center text-sm text-muted">All caught up — no pending actions</p>
+              <p className="py-8 text-center text-sm text-muted">All caught up - no pending actions</p>
             )}
 
             {(inbox?.notifications?.length ?? 0) > 0 && (
               <section>
-                <p className="mb-1 px-2 text-[10px] font-bold uppercase text-muted">Notifications</p>
+                <p className="mb-1.5 px-2 text-[10px] font-semibold uppercase tracking-wider text-muted">Notifications</p>
                 {inbox.notifications.map((n) => (
                   <div key={n.id} className="mb-1 rounded-lg border border-border/50 px-3 py-2 text-xs">
-                    <p className="font-medium">{n.title}</p>
+                    <p className="font-medium text-text">{n.title}</p>
                     <p className="text-muted">{n.message}</p>
                   </div>
                 ))}
@@ -164,7 +164,7 @@ export function ActionInbox() {
             <button
               type="button"
               onClick={() => notificationsApi.readAll().then(load)}
-              className="w-full rounded-lg py-2 text-xs text-muted hover:bg-surface hover:text-text"
+              className="w-full rounded-lg py-2 text-xs text-muted transition-colors hover:bg-elevated hover:text-text"
             >
               Mark all notifications read
             </button>

@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Plus, FolderKanban } from "lucide-react";
+import { Plus, FolderKanban, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { projectsApi } from "../lib/api";
-import { Card } from "../components/ui/Card";
-import { Button } from "../components/ui/Button";
 import { Badge } from "../components/ui/Badge";
 import { PageSkeleton } from "../components/ui/Skeleton";
 import { useToast } from "../hooks/useToast";
@@ -41,64 +39,82 @@ export default function Projects() {
     }
   };
 
+  const inputClass =
+    "w-full rounded-lg border border-border bg-surface px-3.5 py-2.5 text-sm text-text outline-none transition-colors placeholder:text-muted hover:border-border-hover focus:border-accent focus:ring-1 focus:ring-accent/30";
+
   if (loading) return <PageSkeleton />;
 
   return (
     <div className="space-y-6">
+      {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 className="font-display text-3xl font-bold">Projects</h1>
-          <p className="text-muted">Active missions and initiatives</p>
+          <h1 className="text-2xl font-semibold tracking-tight text-text">Projects</h1>
+          <p className="mt-0.5 text-sm text-muted">Active missions and initiatives</p>
         </div>
-        <Button onClick={() => setShowForm(!showForm)}>
-          <Plus size={18} /> New Project
-        </Button>
+        <button
+          onClick={() => setShowForm(!showForm)}
+          className="flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+        >
+          <Plus size={15} /> New Project
+        </button>
       </div>
 
+      {/* Create form */}
       {showForm && (
-        <Card>
-          <form onSubmit={create} className="grid gap-4 md:grid-cols-2">
+        <div className="rounded-xl border border-border bg-card p-5">
+          <form onSubmit={create} className="space-y-3">
             <input
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Project title"
               required
-              className="rounded-lg border border-cyan/10 bg-surface px-4 py-2"
+              className={inputClass}
             />
             <input
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Description"
-              className="rounded-lg border border-cyan/10 bg-surface px-4 py-2 md:col-span-2"
+              className={inputClass}
             />
-            <Button type="submit">Create</Button>
+            <button
+              type="submit"
+              className="rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+            >
+              Create
+            </button>
           </form>
-        </Card>
+        </div>
       )}
 
+      {/* Grid */}
       {projects.length === 0 ? (
-        <Card className="py-16 text-center">
-          <FolderKanban className="mx-auto mb-4 text-muted" size={48} />
-          <p className="text-muted">No projects yet. Launch your first mission.</p>
-        </Card>
+        <div className="flex flex-col items-center rounded-xl border border-border bg-card py-16 text-center">
+          <FolderKanban className="mb-4 text-muted opacity-40" size={40} />
+          <p className="text-sm text-muted">No projects yet. Launch your first one.</p>
+        </div>
       ) : (
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((p, i) => (
             <motion.div
               key={p.id}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.05 }}
+              transition={{ delay: i * 0.04, duration: 0.3 }}
             >
               <Link to={`/projects/${p.id}`}>
-                <Card hover className="h-full">
+                <div className="group rounded-xl border border-border bg-card p-5 transition-colors hover:border-border-hover hover:bg-elevated">
                   <div className="flex items-start justify-between">
                     <Badge>{p.lifecycle}</Badge>
+                    <ArrowUpRight
+                      size={16}
+                      className="text-muted opacity-0 transition-opacity group-hover:opacity-100"
+                    />
                   </div>
-                  <h3 className="mt-3 font-display text-lg font-semibold">{p.title}</h3>
-                  <p className="mt-2 line-clamp-2 text-sm text-muted">{p.category}</p>
-                  <p className="mt-3 text-xs text-muted">{p.taskCount} tasks</p>
-                </Card>
+                  <h3 className="mt-3 text-base font-semibold text-text">{p.title}</h3>
+                  <p className="mt-1.5 line-clamp-2 text-sm text-muted">{p.category}</p>
+                  <p className="mt-3 text-xs text-text-secondary">{p.taskCount} tasks</p>
+                </div>
               </Link>
             </motion.div>
           ))}
