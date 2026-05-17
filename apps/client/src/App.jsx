@@ -8,11 +8,12 @@ import AuthPage from "./pages/auth/AuthPage";
 import Dashboard from "./pages/Dashboard";
 import TaskersPage from "./pages/TaskersPage";
 import TaskReviewPage from "./pages/TaskReviewPage";
-import AttendancePage from "./pages/AttendancePage";
+import AttendanceDashboard from "./components/Attendance/Dashboard";
 import LeavePage from "./pages/LeavePage";
 import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
 import AnalyticsPage from "./pages/AnalyticsPage";
+import AttendanceReports from "./components/Attendance/Reports";
 
 export default function App() {
   return (
@@ -34,7 +35,8 @@ export default function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/taskers" element={<TaskersPage />} />
               <Route path="/task-review" element={<TaskReviewPage />} />
-              <Route path="/attendance" element={<AttendancePage />} />
+              <Route path="/attendance" element={<AttendanceDashboard />} />
+              <Route path="/attendance/reports" element={<AttendanceReports />} />
               <Route path="/leave" element={<LeavePage />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/projects/:id" element={<ProjectDetail />} />

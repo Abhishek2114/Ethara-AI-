@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { format, startOfMonth, endOfMonth, eachDayOfInterval } from 'date-fns';
 import { Download, Filter, Calendar } from 'lucide-react';
-import axios from 'axios';
+import { api } from '../../lib/api';
 
 const AttendanceReports = () => {
   const [reports, setReports] = useState([]);
@@ -9,7 +9,6 @@ const AttendanceReports = () => {
   const [dateRange, setDateRange] = useState('30');
   const [filteredReports, setFilteredReports] = useState([]);
 
-  const API_BASE = process.env.VITE_API_URL || 'http://localhost:5000';
 
   useEffect(() => {
     fetchReports();
@@ -22,10 +21,8 @@ const AttendanceReports = () => {
   const fetchReports = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`${API_BASE}/api/attendance/history?days=90`, {
-        withCredentials: true,
-      });
-      setReports(response.data.history || []);
+      const response = await api.get('/attendance/history?days=90');
+      setReports(response.data.data?.history || response.data.history || []);
     } catch (error) {
       console.error('Failed to fetch reports:', error);
     } finally {
