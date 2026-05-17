@@ -137,9 +137,54 @@ async function listAttendance(user, { date } = {}) {
   });
 }
 
-async function markPresent(user) {
+// Haversine formula to calculate distance in meters between two coordinates
+function getDistanceMeters(lat1, lon1, lat2, lon2) {
+  const R = 6371000; // Earth's radius in meters
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = 
+    Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+    Math.sin(dLon/2) * Math.sin(dLon/2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  return R * c;
+}
+
+async function markPresent(user, locationData = {}) {
   const today = startOfDay();
   const checkInTime = new Date();
+  const { latitude, longitude, isRemote, deviceDetails } = locationData;
+
+  // AstralHQ Corporate office mock coordinates (Delhi central coordinates)
+  const OFFICE_LAT = 28.6139;
+  const OFFICE_LNG = 77.2090;
+  const GEOFENCE_RADIUS_METERS = 300; // 300 meters limit
+
+  let logMessage = `${user.name} checked in at ${checkInTime.toLocaleTimeString()}`;
+
+  if (latitude && longitude) {
+    const distance = getDistanceMeters(latitude, longitude, OFFICE_LAT, OFFICE_LNG);
+    const isWithinGeofence = distance <= GEOFENCE_RADIUS_METERS;
+
+    if (!isWithinGeofence && !isRemote) {
+      throw new Error(`Out of range. You are ${(distance / 1000).toFixed(2)}km from office HQ. Please declare a Remote Session.`);
+    }
+
+    if (isRemote) {
+      logMessage = `${user.name} checked in REMOTELY at ${checkInTime.toLocaleTimeString()} (Location: ${latitude.toFixed(4)}, ${longitude.toFixed(4)})`;
+    } else {
+      logMessage = `${user.name} checked in at ${checkInTime.toLocaleTimeString()} (HQ Geofence verified: ${distance.toFixed(0)}m away)`;
+    }
+  } else {
+    if (!isRemote) {
+      throw new Error("Location coordinates are required for check-in verification. Enable GPS or declare a Remote Session.");
+    }
+    logMessage = `${user.name} checked in REMOTELY (Location unverified/GPS disabled) at ${checkInTime.toLocaleTimeString()}`;
+  }
+
+  if (deviceDetails) {
+    logMessage += ` using ${deviceDetails}`;
+  }
 
   const record = await prisma.attendance.upsert({
     where: { userId_date: { userId: user.id, date: today } },
@@ -149,7 +194,7 @@ async function markPresent(user) {
 
   await logActivity({
     type: "CHECK_IN",
-    message: `${user.name} checked in at ${checkInTime.toLocaleTimeString()}`,
+    message: logMessage,
     actorId: user.id,
     entityId: record.id,
     entityType: "attendance",

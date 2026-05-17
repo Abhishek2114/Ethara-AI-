@@ -10,8 +10,7 @@ import {
   LogOut, 
   User, 
   Settings, 
-  Briefcase,
-  Layers
+  Briefcase
 } from "lucide-react";
 import { useAuth } from "../../lib/auth";
 import { brand } from "../../config/brand";
@@ -143,26 +142,7 @@ export function TaskTrackLayout() {
           </div>
         </div>
 
-        {/* Workspace Switcher */}
-        <div className="px-3 py-3 border-b border-border">
-          <div
-            onClick={() => toast("Ethara Operations is your default active enterprise workspace.", "info")}
-            className={cn(
-              "flex items-center gap-2 rounded-xl border border-border bg-card/60 p-2 cursor-pointer hover:border-border-strong transition-all select-none",
-              sidebarCollapsed && "justify-center"
-            )}
-          >
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 border border-primary/20 text-primary">
-              <Layers size={14} />
-            </div>
-            {!sidebarCollapsed && (
-              <div className="min-w-0 flex-1 leading-none">
-                <span className="block text-xs font-bold text-white truncate">Ethara Ops</span>
-                <span className="block text-[9px] text-muted mt-0.5">Enterprise Suite</span>
-              </div>
-            )}
-          </div>
-        </div>
+
 
         {/* User Workspace Info bar */}
         {!sidebarCollapsed && (

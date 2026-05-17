@@ -7,7 +7,13 @@ const list = catchAsync(async (req, res) => {
 });
 
 const checkIn = catchAsync(async (req, res) => {
-  const record = await attendanceService.markPresent(req.user);
+  const { latitude, longitude, isRemote, deviceDetails } = req.body;
+  const record = await attendanceService.markPresent(req.user, {
+    latitude,
+    longitude,
+    isRemote,
+    deviceDetails,
+  });
   sendSuccess(res, { record });
 });
 
