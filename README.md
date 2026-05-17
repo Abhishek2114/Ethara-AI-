@@ -1,20 +1,171 @@
-# AstralHQ — Enterprise AI Workforce Operations Platform
+# 🚀 ASTRALHQ — Enterprise AI Workforce Operations Platform
 
-AstralHQ by Ethara AI is a production-grade, dark-luxury workforce operations platform designed to orchestrate hybrid team workflows, manage task queues, track attendance auditing under regulatory standards, and deliver high-density operational telemetry.
+> **Built For Ethara AI**
+>
+> AstralHQ is a next-generation AI-powered workforce operations platform engineered for modern teams, hybrid organizations, AI-first startups, and enterprise productivity ecosystems.
+>
+> It combines:
+>
+> - 🧠 AI Workspace Intelligence
+> - 👥 Workforce Management
+> - 📊 Productivity Analytics
+> - ⏱️ Attendance Tracking
+> - ⚡ Real-Time Collaboration
+> - 🔐 Enterprise Security
+> - 🚀 Production-Grade Architecture
 
 ---
 
-## 🎯 Platform Overview
+# 🌐 LIVE DEPLOYMENT
 
-AstralHQ unites human workforce auditing and AI intelligence workflows into a high-contrast command dashboard. It acts as an operational mission control for modern organizations that require precise session logging, project allocating, and real-time status reporting.
+## 🚀 Experience AstralHQ Live
 
-* **Unified Control**: Replaces segmented tracking spreadsheets with a single, high-fidelity operations interface.
-* **Compliance Standards**: Designed to audit check-in/check-out durations, calculate daily scores, and generate immutable logs for compliance standards.
-* **Role-Based Telemetry**: Separate interfaces and permissions for Administrators, Project Leads, Quality Reviewers, and Taskers.
+👉 **Live Website:** https://astralhq.vercel.app/
 
 ---
 
-## 🏗️ System Architecture
+# 🎯 PLATFORM OVERVIEW
+
+AstralHQ transforms traditional workforce management into an intelligent operational command center.
+
+It replaces:
+- spreadsheets,
+- disconnected dashboards,
+- manual attendance systems,
+- scattered reporting tools,
+
+with one centralized AI-powered ecosystem.
+
+---
+
+# 🧠 WHAT MAKES ASTRALHQ DIFFERENT?
+
+## Traditional Platforms:
+❌ Only attendance  
+❌ Only chat  
+❌ Only tasks  
+❌ No AI intelligence  
+
+---
+
+## AstralHQ:
+✅ AI Workforce Intelligence  
+✅ Attendance Auditing  
+✅ Productivity Scoring  
+✅ Team Analytics  
+✅ Real-Time Collaboration  
+✅ AI Command Center  
+✅ Performance Reports  
+✅ Multi-role Workspace  
+
+---
+
+# 🔥 FEATURE EXTRAVAGANZA
+
+# 🧠 AI Workspace Intelligence
+
+Integrated AI ecosystem supporting:
+- OpenAI
+- Claude
+- Gemini
+- Perplexity
+- Custom AI APIs
+
+### Capabilities
+- AI-powered productivity
+- Team assistance
+- Smart workflow recommendations
+- Intelligent reporting
+- AI operational insights
+
+---
+
+# 👥 Workforce Management System
+
+Complete employee operations infrastructure.
+
+### Includes
+- Team dashboards
+- Member activity tracking
+- Role-based access control
+- Workspace management
+- Employee performance analytics
+
+---
+
+# ⏱️ Attendance Auditing Engine
+
+Enterprise-grade attendance monitoring system.
+
+### Features
+✅ Daily Check-In / Check-Out  
+✅ Auto Date Detection  
+✅ Live Session Timer  
+✅ Work Duration Tracking  
+✅ Attendance Heatmaps  
+✅ Late Detection  
+✅ Leave Management  
+✅ Daily Audit Logs  
+
+---
+
+# 📊 AI Productivity Analytics
+
+Track team performance using intelligent scoring systems.
+
+### Weekly Reports
+- Tasks completed
+- Active work hours
+- Attendance percentage
+- AI usage analytics
+- Productivity ranking
+
+---
+
+### Monthly Reports
+- Attendance analysis
+- Work quality scoring
+- Time spent on platform
+- Team contribution analysis
+- Performance consistency
+
+---
+
+# 🏆 AI Performance Scoring Engine
+
+AstralHQ calculates intelligent productivity scores using:
+- Attendance
+- Work consistency
+- Task completion
+- Active hours
+- Team engagement
+
+### Example Logic
+
+```js
+score =
+(attendance * 0.3) +
+(taskCompletion * 0.4) +
+(activeHours * 0.2) +
+(teamInteraction * 0.1)
+```
+
+---
+
+# ⚡ REAL-TIME COLLABORATION
+
+Powered by WebSockets for instant synchronization.
+
+### Real-Time Features
+- Live team updates
+- Instant messaging
+- Typing indicators
+- Workspace synchronization
+- Live status monitoring
+
+---
+
+# 🏗️ SYSTEM ARCHITECTURE
 
 ```text
                      ┌────────────────────────┐
@@ -43,98 +194,450 @@ AstralHQ unites human workforce auditing and AI intelligence workflows into a hi
                                  │
                                  ▼
                      ┌────────────────────────┐
-                     │   SQLite Database      │
-                     │    (Local Dev DB)      │
+                     │ PostgreSQL / SQLite DB │
                      └────────────────────────┘
 ```
 
 ---
 
-## ✨ Features
+# 🎨 UI/UX SYSTEM
 
-### 1. Operations Telemetry & Command Center
-* **Workspace Switcher**: Seamlessly switch between enterprise organizational units.
-* **⌘K Global Command Palette**: Open search capabilities using `Cmd+K` keyboard shortcuts to navigate resources, tasks, and team indexes instantly.
-* **12-Column High-Density Grid**: Interface widgets sized perfectly to optimize viewport space, presenting maximum context with a premium visual hierarchy.
-
-### 2. Full-Suite Attendance Auditing
-* **Visual Work-Duration Clocks**: Live timers showing active check-in durations to the exact second.
-* **7-Day Action Grid**: Visual matrix displaying previous work states, average session scores, and overall status (Present, Late, Absent).
-* **Automatic Status Seeding**: Daily cron-like checks that pre-initialize missing dates for all active members, applying leaves or marking absentees.
-* **Reports Panel**: Generate daily attendance analytics, export historical tables, and audit time entries easily.
-
-### 3. Comprehensive Task & Project Controls
-* **Kanban Boards**: Drag, drop, and review task states dynamically.
-* **Review Gateways**: Dedicated validation steps for Quality Reviewers to score and sign off on completed work before merging.
+AstralHQ follows a:
+- Dark luxury UI
+- Glassmorphism aesthetics
+- Enterprise SaaS architecture
+- High-density operational dashboards
 
 ---
 
-## 🛠️ Technical Stack
+# 🎯 UI/UX IMPROVEMENTS PLANNED
 
-* **Frontend**: React.js, Vite Dev Server, Tailwind CSS (v4 Architecture), Lucide Icons, Axios Client.
-* **Backend**: Node.js, Express Framework, Socket.IO WebSockets.
-* **Data Layer**: Prisma ORM, SQLite database (`apps/server/data/dev.db`).
+## Modern SaaS Features
+✅ Glassmorphism  
+✅ Animated Charts  
+✅ AI Dashboards  
+✅ Gradient Themes  
+✅ Dark Mode  
+✅ Real-Time Analytics  
+✅ Smart Widgets  
 
 ---
 
-## 🔑 Environment Setup
+# 🛠️ TECH STACK
 
-Create a `.env` file in `apps/server/`:
+# 🎨 Frontend
+- React.js
+- Vite
+- TypeScript
+- Tailwind CSS v4
+- Axios
+- Zustand
+- Lucide Icons
+- React Router
 
-```env
-PORT=3000
-NODE_ENV=development
-DATABASE_URL="file:../data/dev.db"
-JWT_ACCESS_SECRET="your-high-security-jwt-secret-key"
-JWT_REFRESH_SECRET="your-high-security-refresh-secret-key"
+---
+
+# ⚙️ Backend
+- Node.js
+- Express.js
+- Socket.IO
+- JWT Authentication
+- REST APIs
+
+---
+
+# 🗄️ Database
+- PostgreSQL
+- SQLite
+- Prisma ORM
+
+---
+
+# 📊 Analytics & Charts
+- Recharts
+- Chart.js
+- Tremor UI
+
+---
+
+# ☁️ Deployment
+- Vercel
+- Railway
+- Render
+- Docker
+
+---
+
+# 📂 PROJECT STRUCTURE
+
+```bash
+astralhq/
+│
+├── apps/
+│   │
+│   ├── client/                 # Frontend Application
+│   │   ├── src/
+│   │   │   ├── components/
+│   │   │   ├── pages/
+│   │   │   ├── hooks/
+│   │   │   ├── services/
+│   │   │   ├── store/
+│   │   │   └── utils/
+│   │
+│   ├── server/                 # Backend Application
+│       ├── routes/
+│       ├── controllers/
+│       ├── middleware/
+│       ├── prisma/
+│       ├── sockets/
+│       └── services/
+│
+├── shared/
+├── docs/
+├── package.json
+└── README.md
 ```
 
 ---
 
-## ⚡ Quick Start
+# ⚡ QUICK START
 
-### 1. Install Workspace Dependencies
-Execute this from the root directory to install all monorepo dependencies:
+# 📦 Clone Repository
+
+```bash
+git clone https://github.com/your-username/astralhq.git
+cd astralhq
+```
+
+---
+
+# 📥 Install Dependencies
+
 ```bash
 npm install
 ```
 
-### 2. Initialize and Seed the Database
-Synchronize your Prisma schema and seed the default roles/members:
-```bash
-# Generate the client and apply SQLite database migrations
-npm run db:deploy --workspace=apps/server
+---
 
-# Seed standard accounts and roles
+# 🔑 ENVIRONMENT VARIABLES
+
+Create `.env` inside `apps/server/`
+
+```env
+PORT=3000
+NODE_ENV=development
+
+DATABASE_URL="file:../data/dev.db"
+
+JWT_ACCESS_SECRET="your-high-security-jwt-secret-key"
+JWT_REFRESH_SECRET="your-high-security-refresh-secret-key"
+
+OPENAI_API_KEY=your_openai_key
+CLAUDE_API_KEY=your_claude_key
+GEMINI_API_KEY=your_gemini_key
+```
+
+---
+
+# 🚀 DATABASE SETUP
+
+# Prisma Migration
+
+```bash
+npm run db:deploy --workspace=apps/server
+```
+
+---
+
+# Seed Database
+
+```bash
 npm run db:seed --workspace=apps/server
 ```
 
-### 3. Run Development Servers
-Boot the backend server (Port 3000) and the frontend Vite compiler (Port 5173):
-```bash
-# Start backend
-npm run dev:server
+---
 
-# Start frontend
+# 🚀 RUN DEVELOPMENT SERVERS
+
+# Backend
+
+```bash
+npm run dev:server
+```
+
+---
+
+# Frontend
+
+```bash
 npm run dev:client
 ```
 
-Open **`http://localhost:5173/`** in your browser.
+---
+
+# 🌐 OPEN APPLICATION
+
+## Local Development
+```text
+http://localhost:5173/
+```
+
+## Production Deployment
+👉 https://astralhq.vercel.app/
 
 ---
 
-## 🔒 Default Seed Credentials
-
-Use these default accounts to explore the control dashboards:
+# 🔒 DEFAULT DEMO CREDENTIALS
 
 | Role | Username | Password |
 |---|---|---|
-| **Quality Reviewer** | `abhishek.singh23@ethara.ai` | `Admin123!` |
-| **Project Lead** | `piyush.tomar@ethara.ai` | `Admin123!` |
-| **Tasker / Engineer** | `tasker1@ethara.ai` | `Member123!` |
+| Quality Reviewer | abhishek.singh23@ethara.ai | Admin123! |
+| Project Lead | piyush.tomar@ethara.ai | Admin123! |
+| Tasker / Engineer | tasker1@ethara.ai | Member123! |
 
 ---
 
-## 📜 License
+# 📡 API MODULES
 
-Distributed under the MIT License. Copyright &copy; 2026 Ethara AI.
+# Authentication APIs
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/auth/login` | Login |
+| POST | `/api/auth/register` | Register |
+| GET | `/api/auth/me` | Current User |
+
+---
+
+# Attendance APIs
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/attendance/checkin` | Check-In |
+| POST | `/api/attendance/checkout` | Check-Out |
+| GET | `/api/attendance/report` | Attendance Report |
+
+---
+
+# Productivity APIs
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/analytics/weekly` | Weekly Analytics |
+| GET | `/api/analytics/monthly` | Monthly Analytics |
+| GET | `/api/analytics/top-performers` | Team Ranking |
+
+---
+
+# 🔥 REAL-TIME SOCKET EVENTS
+
+```text
+connect
+disconnect
+attendance:update
+message:new
+workspace:update
+user:typing
+presence:update
+```
+
+---
+
+# 🔐 SECURITY FEATURES
+
+✅ JWT Authentication  
+✅ RBAC Authorization  
+✅ Secure Sessions  
+✅ Password Hashing  
+✅ Rate Limiting  
+✅ API Validation  
+✅ CORS Protection  
+✅ Input Sanitization  
+✅ Environment Isolation  
+
+---
+
+# 📊 ADVANCED ANALYTICS SYSTEM
+
+# Weekly Analytics Dashboard
+
+Includes:
+- Attendance graphs
+- Productivity charts
+- Team rankings
+- AI usage metrics
+- Active hours reports
+
+---
+
+# Monthly Operational Reports
+
+Tracks:
+- Work quality
+- Attendance consistency
+- Platform usage time
+- Team engagement
+- Operational efficiency
+
+---
+
+# 🎨 BEST UI/UX TOOLS FOR DEVELOPMENT
+
+## Recommended Design Stack
+
+| Purpose | Tool |
+|---|---|
+| UI/UX Design | Figma |
+| AI UI Generation | v0.dev |
+| Dashboard Inspiration | Mobbin |
+| Full SaaS UI Builder | Lovable.dev |
+
+---
+
+# 🧪 TESTING
+
+# Run Tests
+
+```bash
+npm run test
+```
+
+---
+
+# Run Linting
+
+```bash
+npm run lint
+```
+
+---
+
+# 🐳 DOCKER SUPPORT
+
+# Build Docker Image
+
+```bash
+docker build -t astralhq .
+```
+
+---
+
+# Run Container
+
+```bash
+docker run -p 3000:3000 astralhq
+```
+
+---
+
+# 🐛 TROUBLESHOOTING
+
+# Environment Variables Not Working
+
+### Fix
+- Restart server
+- Verify `.env`
+- Reload environment variables
+
+---
+
+# Database Connection Failed
+
+### Fix
+- Check Prisma schema
+- Verify database path
+- Re-run migrations
+
+---
+
+# Socket Connection Issues
+
+### Fix
+- Verify backend URL
+- Enable CORS
+- Restart websocket server
+
+---
+
+# 📈 FUTURE ROADMAP
+
+## 🚀 Upcoming Features
+
+- AI Agents
+- AI Attendance Predictions
+- Smart Productivity Insights
+- Voice AI Assistant
+- AI Task Recommendations
+- Mobile Application
+- AI File Analysis
+- Team Heatmaps
+- Enterprise SSO
+- Slack Integration
+
+---
+
+# 🤝 CONTRIBUTING
+
+We welcome contributors worldwide.
+
+## Contribution Flow
+
+1. Fork Repository
+2. Create Feature Branch
+3. Commit Changes
+4. Push Code
+5. Open Pull Request
+
+---
+
+# 🌍 OPEN SOURCE VISION
+
+AstralHQ is designed to become:
+- an AI-powered workforce operating system,
+- productivity intelligence platform,
+- enterprise collaboration ecosystem,
+- and operational command center.
+
+---
+
+# 👨‍💻 BUILT FOR BUILDERS
+
+Perfect for:
+- Developers
+- AI Engineers
+- Startups
+- Operations Teams
+- Productivity Analysts
+- Enterprise Organizations
+
+---
+
+# ⭐ SUPPORT THE PROJECT
+
+If you liked AstralHQ:
+
+⭐ Star the Repository  
+🍴 Fork the Project  
+🚀 Share with Developers  
+🧠 Contribute Features  
+
+---
+
+# 📜 LICENSE
+
+MIT License © 2026 Ethara AI
+
+---
+
+# 🚀 FINAL MESSAGE
+
+> AstralHQ is not just another dashboard.
+>
+> It’s a next-generation AI workforce intelligence platform built for the future of operations, productivity, and intelligent collaboration.
+>
+> Build faster. Track smarter. Scale infinitely. 💥
+
+---
+
+### Source Reference
+Combined and enhanced from uploaded README content.  [oai_citation:0‡README-3.md](sediment://file_00000000a768720b8e92fe79b84fd19c)
