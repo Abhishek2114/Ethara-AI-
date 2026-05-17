@@ -1,11 +1,11 @@
 export const brand = {
-  name: "Task Track",
-  shortName: "TT",
-  company: "Ethara.AI Intelligence Platform",
-  tagline: "Ethara.AI Intelligence Platform",
-  domain: "task.ethara.ai",
-  supportEmail: "admin@ethara.ai",
-  platform: "Multimango",
+  name: "AstralHQ",
+  shortName: "AHQ",
+  company: "Ethara AI Operations Platform",
+  tagline: "Mission Control for AI Operations",
+  domain: "astralhq.com",
+  supportEmail: "support@ethara.ai",
+  platform: "AstralHQ",
 };
 
 export const ROLES = {

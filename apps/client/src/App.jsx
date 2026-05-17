@@ -14,6 +14,7 @@ import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
 import AnalyticsPage from "./pages/AnalyticsPage";
 import AttendanceReports from "./components/Attendance/Reports";
+import Landing from "./pages/Landing";
 
 export default function App() {
   return (
@@ -22,9 +23,10 @@ export default function App() {
       <SocketProvider>
         <ToastProvider>
           <Routes>
-            <Route path="/auth" element={<AuthPage />} />
-            <Route path="/login" element={<Navigate to="/auth" replace />} />
-            <Route path="/register" element={<Navigate to="/auth" replace />} />
+            <Route path="/" element={<Landing />} />
+            <Route path="/auth" element={<Navigate to="/login" replace />} />
+            <Route path="/login" element={<AuthPage />} />
+            <Route path="/register" element={<AuthPage />} />
             <Route
               element={
                 <ProtectedRoute>
@@ -42,7 +44,6 @@ export default function App() {
               <Route path="/projects/:id" element={<ProjectDetail />} />
               <Route path="/analytics" element={<AnalyticsPage />} />
             </Route>
-            <Route path="/" element={<Navigate to="/auth" replace />} />
             <Route path="*" element={<Navigate to="/dashboard" replace />} />
           </Routes>
         </ToastProvider>

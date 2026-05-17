@@ -4,15 +4,20 @@
   --color-bg: #070B14;
   --color-surface: #111827;
   --color-card: #161D2E;
+  --color-surface-elevated: #1E293B;
   --color-border: rgba(255,255,255,0.06);
+  --color-border-strong: rgba(255,255,255,0.15);
+  --color-primary: #00E5FF;
   --color-cyan: #00E5FF;
   --color-teal: #00E5FF;
   --color-purple: #7C3AED;
   --color-success: #10B981;
   --color-warning: #F59E0B;
   --color-danger: #EF4444;
-  --color-text-primary: #E5E7EB;
-  --color-text-secondary: #94A3B8;
+  --color-text: #F3F4F6;
+  --color-text-muted: #9CA3AF;
+  --color-text-primary: #F3F4F6;
+  --color-text-secondary: #9CA3AF;
   
   --font-sans: "Inter", system-ui, sans-serif;
   --font-display: "Space Grotesk", system-ui, sans-serif;
@@ -112,27 +117,6 @@ body {
 .btn-primary-neon:hover {
   box-shadow: 0 0 25px rgba(0, 229, 255, 0.6);
   transform: translateY(-1px);
-}
-
-.auth-watermark {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.auth-watermark span {
-  font-family: var(--font-display);
-  font-size: clamp(4rem, 18vw, 12rem);
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  color: rgba(255, 255, 255, 0.02);
-  white-space: nowrap;
-  user-select: none;
 }
 
 ::-webkit-scrollbar { width: 6px; height: 6px; }
