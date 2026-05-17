@@ -20,7 +20,7 @@
 
 ## 🚀 Experience AstralHQ Live
 
-👉 **Live Website:** https://astralhq.vercel.app/
+👉 **Live Website:** etharaai-ten.vercel.app
 
 ---
 
